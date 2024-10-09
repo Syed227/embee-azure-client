@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+
+    background: linear-gradient(to bottom, #e9f8fa, #e3e3f1);
+    /* Additional styling if needed */
+    height: 100vh; /* Example height */
+  
+  
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .auth:hover{
+    cursor: pointer;
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+
+  .dropdown-toggle {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-top: 8px;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+
+ 
+ .heading{
+  color:#1D4568
+ }
+
+ .control{
+  color:#9C2E2D
+ }
+
+ .pie-component {
+  transition: transform 0.5s ease;
+}
+
+.pie-component:hover {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card {
+  width: 33%;
+  height: 24rem;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  perspective: 1000px;
+}
+
+.flip-card .react-three-fiber {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .react-three-fiber {
+  transform: rotateY(180deg);
+}
+
+/* Add this to your CSS file */
+.loader {
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-tooltip {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Small shadow */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Add this CSS to your stylesheet or CSS module */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner-container p {
+  margin-top: 10px;
+  font-size: 16px;
+}
