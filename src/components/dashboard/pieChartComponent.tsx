@@ -38,7 +38,7 @@ const PieComponent = ({ data, dataname }: Props) => {
       } else if (screenWidth >= 1280) {
         setOuterRadius(160);  // Standard laptop screens
       } else {
-        setOuterRadius(90);  // Smaller screens
+        setOuterRadius(65);  // Smaller screens
       }
     };
 
