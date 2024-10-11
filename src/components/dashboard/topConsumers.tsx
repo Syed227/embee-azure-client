@@ -163,7 +163,11 @@ const TopConsumers = ({ EAData, CSPData }: Props) => {
             <BarChart data={filteredData} onClick={handleBarClick} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="customer_name" tickFormatter={formatXAxisTick} />
-              <YAxis tickFormatter={formatYAxisTick} domain={[0, (dataMax: number) => dataMax + 500000]} />
+              <YAxis
+  tickFormatter={formatYAxisTick}
+  domain={[0, (dataMax: number) => Math.ceil(dataMax / 10_000_000) * 10_000_000 + 2_000_000]} // Round to nearest 10 million + 2 million
+/>
+
               <Tooltip formatter={(value: number) => `${(value / 1_000_000).toFixed(2)}M`} />
               <Legend />
               <Bar dataKey="totalConsumption" fill="#3091c9" barSize={70}>

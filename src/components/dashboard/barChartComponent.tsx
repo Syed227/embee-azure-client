@@ -80,7 +80,10 @@ const BarChartComponent = ({ EAdata, CSPdata, dataname }: Props) => {
         <BarChart width={1000} height={500} data={chartData}> {/* Increased dimensions */}
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="month" />
-          <YAxis tickFormatter={(value) => formatNumber(value)} /> {/* Format Y-axis */}
+          <YAxis
+  tickFormatter={(value) => formatNumber(value)}
+  domain={[0, (dataMax: number) => Math.ceil(dataMax / 10_000_000) * 10_000_000 + 10_000_000]} // Round to nearest 10 million + 10 million
+/>
           <Tooltip content={<CustomTooltip />} />
           <Legend />
           <Bar dataKey="EA" fill="#77c9ae" barSize={20} name="EA Data">
@@ -89,11 +92,11 @@ const BarChartComponent = ({ EAdata, CSPdata, dataname }: Props) => {
               content={({ x, y, value }: any) => (
                 value > 0 ? (
                   <text
-                    x={x + 10} // Adjusted to move text to the right
-                    y={y - 10}
+                    x={x + 15} // Adjusted to move text to the right
+                    y={y - 5}
                     fill="#77c9ae"
                     textAnchor="middle"
-                    fontSize={10}
+                    fontSize={12}
                   >
                     {formatNumber(value as number)}
                   </text>
@@ -107,8 +110,8 @@ const BarChartComponent = ({ EAdata, CSPdata, dataname }: Props) => {
               content={({ x, y, value }: any) => (
                 value > 0 ? (
                   <text
-                    x={x + 10} // Adjusted to move text to the right
-                    y={y - 10}
+                    x={x + 15} // Adjusted to move text to the right
+                    y={y - 5}
                     fill="#8884d8"
                     textAnchor="middle"
                     fontSize={12}
